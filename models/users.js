@@ -7,4 +7,5 @@ const UserSchema = new mongoose.Schema ({
   profession: mongoose.Schema.Types.String,
 });
 
-module.exports = mongoose.model('Users', UserSchema);
+const users = mongoose.connection.useDb('users');
+module.exports = users.model('users', UserSchema);
